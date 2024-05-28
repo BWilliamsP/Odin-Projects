@@ -1,0 +1,20 @@
+def cypher(text, shift)
+  encryption = []
+  text.chars.map! do |char|
+    if char.ord >= 65 && char.ord <= 90
+      char = (char.ord + shift - 65) % 26 + 65
+      encryption.push(char.chr)
+    elsif char.ord >= 97 &&
+      char.ord <= 122
+      char = (char.ord + shift - 97) % 26 + 97
+      encryption.push(char.chr)
+    else
+      char
+    end
+  single_string = encryption.join
+    p single_string
+  end
+end
+
+cypher("What a string!", 5)
+      
